@@ -1,0 +1,5 @@
+#HGTAG - DO NOT ADD ANYTHING BELOW THIS LINE, ADD FEATURES TO THE MASTER SCRIPT
+# http://bitbucket.org/anowack/code/setup_scripts/bash/bashrc
+
+# appearance settings
+export PS1="[\u| \[\033[01;34m\]\W\[\033[0m\]] "

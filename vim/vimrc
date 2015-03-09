@@ -1,0 +1,79 @@
+""" vim editor settings begin
+" Use vi iMproved
+set nocompatible
+" Yes we have 256 colors available
+set t_Co=256
+" Yes color highlight syntax
+syntax on
+" put all .swp files somewhere not in the way
+set backupdir=~/.vim-tmp
+set directory=~/.vim-tmp
+" smart indent
+set si
+" show line numbers
+set nu
+" tabs should be two spaces
+set expandtab
+set tabstop=2
+set shiftwidth=2
+" always display cursor position
+set ruler
+" show matching brackets
+set showmatch
+" make backspace behave the way I expect it to
+set backspace=indent,eol,start
+" no bell please
+set vb
+set t_vb=
+" jj as an alternative esc key
+imap jj <Esc>
+" set color column
+if version >= 703
+  set colorcolumn=80
+endif
+" settings for powerline
+set laststatus=2
+set noshowmode
+" default to 100 wide
+" set columns=100
+" ctrl+t for opening tabs
+nnoremap <C-t> :tabnew<CR>
+""" vim editor settings end
+
+""" vundle options begin
+if has("user_commands")
+  filetype off " required
+  set rtp+=~/.vim/bundle/vundle/
+  runtime autoload/vundle.vim " for the following exist check
+endif
+if exists("*vundle#rc")
+  call vundle#rc()
+  Bundle 'gmarik/vundle'
+  " My installed bundles
+  Bundle 'bling/vim-airline'
+  Bundle 'kien/ctrlp.vim'
+  Bundle 'nathanaelkane/vim-indent-guides'
+  Bundle 'rhysd/vim-clang-format'
+  filetype plugin indent on " required
+endif
+""" Vundle Options End
+
+""" color scheme options begin
+colorscheme zenburn
+""" color scheme options end
+
+""" indent guide settings begin
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_color_change_percent = 3
+let g:indent_guides_indent_levels = 12
+if !has("gui_running")
+  let g:indent_guides_auto_colors = 0
+  :hi IndentGuidesOdd guibg=darkgrey ctermbg=238
+  :hi IndentGuidesEven guibg=darkgrey ctermbg=237
+endif
+""" indent guide settings end
+
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_theme='tomorrow'
