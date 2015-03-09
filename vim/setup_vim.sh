@@ -39,11 +39,6 @@ fi
 echo "Updated vimrc."
 
 cp $THISPATH/gvimrc ~/.gvimrc
-# if Droid Sans Mono not installed, comment it out in ~/.gvimrc
-if [[ -z $(fc-list | grep "DroidSansMono") ]]; then
-  sed -i -e 's/set guifont/\" set guifont/' ~/.gvimrc
-  sed -i -e 's/\" set fallback_guifont/set guifont/' ~/.gvimrc
-fi 
 
 if [[ $OFFLINE -eq 0 ]]; then
   echo "To install vim packages, open vim and enter :BundleInstall"
