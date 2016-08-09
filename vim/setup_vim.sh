@@ -22,7 +22,7 @@ if [[ -d ~/.vim/bundle/vundle ]]; then
   echo "Vundle already installed, proceeding ..."
 elif [[ $OFFLINE -eq 0 ]]; then
   echo -n "Installing Vundle ... "
-  git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   echo "done"
 fi
 
