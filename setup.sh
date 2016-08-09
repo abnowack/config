@@ -25,3 +25,5 @@ cd ../vim
 ./setup_vim.sh
 cd ../xfce4
 ./setup_xfce4.sh
+cd ../git
+./setup_git.sh
