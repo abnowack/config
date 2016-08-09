@@ -43,17 +43,18 @@ nnoremap <C-t> :tabnew<CR>
 """ vundle options begin
 if has("user_commands")
   filetype off " required
-  set rtp+=~/.vim/bundle/vundle/
+  set rtp+=~/.vim/bundle/Vundle.vim
   runtime autoload/vundle.vim " for the following exist check
 endif
-if exists("*vundle#rc")
-  call vundle#rc()
-  Bundle 'gmarik/vundle'
+if exists("*vundle#begin")
+  call vundle#begin()
+  Plugin 'VundleVim/Vundle.vim'
   " My installed bundles
-  Bundle 'bling/vim-airline'
-  Bundle 'kien/ctrlp.vim'
+  Plugin 'vim-airline/vim-airline'
+  Plugin 'vim-airline/vim-airline-themes'
+  Plugin 'ctrlpvim/ctrlp.vim'
   Bundle 'nathanaelkane/vim-indent-guides'
-  Bundle 'rhysd/vim-clang-format'
+  call vundle#end() " required
   filetype plugin indent on " required
 endif
 """ Vundle Options End
@@ -74,6 +75,8 @@ if !has("gui_running")
 endif
 """ indent guide settings end
 
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 let g:airline_left_sep=''
 let g:airline_right_sep=''
-let g:airline_theme='tomorrow'
+let g:airline_theme='base16_eighties'
